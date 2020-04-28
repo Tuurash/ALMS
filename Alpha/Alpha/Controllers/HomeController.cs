@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Alpha.Models;
+using Alpha.Repository;
 
 namespace Alpha.Controllers
 {
@@ -29,7 +31,8 @@ namespace Alpha.Controllers
 
         public ActionResult ReliefList()
         {
-            return View();
+            IRepository<ReliefTB> repo = new ReliefRepo();
+            return View(repo.GetAll().ToList());
         }
     }
 }
