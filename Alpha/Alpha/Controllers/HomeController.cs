@@ -10,6 +10,9 @@ namespace Alpha.Controllers
 {
     public class HomeController : Controller
     {
+
+        IRepository<DonationTB> Donationrep = new DonationRepo();
+
         public ActionResult Index()
         {
             return View();
@@ -33,6 +36,25 @@ namespace Alpha.Controllers
         {
             IRepository<ReliefTB> repo = new ReliefRepo();
             return View(repo.GetAll().ToList());
+        }
+        public ActionResult Donate()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Donate(DonationTB DTB)
+        {
+            Donationrep.Insert(DTB);
+            return RedirectToAction(nameof(DonationDetails), new { DTB.DonateID });
+        }
+
+        public ActionResult DonationDetails(int DonateID)
+        {
+            if ((Session["DonateID"]!= null))
+            {
+                return View(Donationrep.Get(DonateID));
+            }
+            else { return RedirectToAction("Donate"); }
         }
     }
 }

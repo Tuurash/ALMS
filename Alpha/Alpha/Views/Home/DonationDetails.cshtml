@@ -1,0 +1,58 @@
+﻿@model Alpha.Models.DonationTB
+
+@{
+    ViewBag.Title = "DonationDetails";
+}
+
+<h2>DonationDetails</h2>
+
+<div>
+    <h4>DonationTB</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DonateID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonateID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Career)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Career)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonorID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
