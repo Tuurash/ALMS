@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CovidModelStoreContainer" CdmEntityContainer="CovidDataContext">
+    <EntitySetMapping Name="AddressTBs">
+      <EntityTypeMapping TypeName="CovidModel.AddressTB">
+        <MappingFragment StoreEntitySet="AddressTB">
+          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Town" ColumnName="Town" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="PoliceStation" ColumnName="PoliceStation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BetaTBs">
+      <EntityTypeMapping TypeName="CovidModel.BetaTB">
+        <MappingFragment StoreEntitySet="BetaTB">
+          <ScalarProperty Name="BetaID" ColumnName="BetaID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+          <ScalarProperty Name="BetaPhoneNo" ColumnName="BetaPhoneNo" />
+          <ScalarProperty Name="BetaRelevent" ColumnName="BetaRelevent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonorTBs">
+      <EntityTypeMapping TypeName="CovidModel.DonorTB">
+        <MappingFragment StoreEntitySet="DonorTB">
+          <ScalarProperty Name="DonorID" ColumnName="DonorID" />
+          <ScalarProperty Name="DonorName" ColumnName="DonorName" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Visiblity" ColumnName="Visiblity" />
+          <ScalarProperty Name="DonateID" ColumnName="DonateID" />
+          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FamilyTBs">
+      <EntityTypeMapping TypeName="CovidModel.FamilyTB">
+        <MappingFragment StoreEntitySet="FamilyTB">
+          <ScalarProperty Name="FamilyID" ColumnName="FamilyID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AuthTyp" ColumnName="AuthTyp" />
+          <ScalarProperty Name="AuthNo" ColumnName="AuthNo" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Relation" ColumnName="Relation" />
+          <ScalarProperty Name="BetaID" ColumnName="BetaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecieverTBs">
+      <EntityTypeMapping TypeName="CovidModel.RecieverTB">
+        <MappingFragment StoreEntitySet="RecieverTB">
+          <ScalarProperty Name="RecieverID" ColumnName="RecieverID" />
+          <ScalarProperty Name="RecieverName" ColumnName="RecieverName" />
+          <ScalarProperty Name="AuthTyp" ColumnName="AuthTyp" />
+          <ScalarProperty Name="NID" ColumnName="NID" />
+          <ScalarProperty Name="BCID" ColumnName="BCID" />
+          <ScalarProperty Name="RecieverPhoneNo" ColumnName="RecieverPhoneNo" />
+          <ScalarProperty Name="FamilyID" ColumnName="FamilyID" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="FamilyMemberCount" ColumnName="FamilyMemberCount" />
+          <ScalarProperty Name="DonorID" ColumnName="DonorID" />
+          <ScalarProperty Name="RecieveCount" ColumnName="RecieveCount" />
+          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+          <ScalarProperty Name="RecieverJob" ColumnName="RecieverJob" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReliefTBs">
+      <EntityTypeMapping TypeName="CovidModel.ReliefTB">
+        <MappingFragment StoreEntitySet="ReliefTB">
+          <ScalarProperty Name="DonationID" ColumnName="DonationID" />
+          <ScalarProperty Name="RecieverID" ColumnName="RecieverID" />
+          <ScalarProperty Name="DonorID" ColumnName="DonorID" />
+          <ScalarProperty Name="DonationDate" ColumnName="DonationDate" />
+          <ScalarProperty Name="DonationStatus" ColumnName="DonationStatus" />
+          <ScalarProperty Name="BetaID" ColumnName="BetaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonationTBs">
+      <EntityTypeMapping TypeName="CovidModel.DonationTB">
+        <MappingFragment StoreEntitySet="DonationTB">
+          <ScalarProperty Name="DonateID" ColumnName="DonateID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Career" ColumnName="Career" />
+          <ScalarProperty Name="DonateDate" ColumnName="DonateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
