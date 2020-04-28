@@ -1,0 +1,38 @@
+﻿@model Alpha.Models.CovidDatacontext
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        @{
+            ViewBag.Title = "UserDashBoard";
+        }
+
+        <fieldset>
+            <legend> User DashBoard </legend>
+
+            @if (Session["DonorName"] != null)
+            {
+                <text>
+                    Welcome @Session["DonorName"].ToString()
+                </text>
+
+                <br /><br />
+                <br /><br />
+                <br /><br />
+
+            }
+            
+        </fieldset>
+    </div>
+    <div>@Html.ActionLink("LogOut", "Logout")</div>
+</body>
+</html>

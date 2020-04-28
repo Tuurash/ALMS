@@ -1,0 +1,52 @@
+﻿@model Alpha.Models.DonorTB
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ARS-Advanced Relief-Distribution System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+<body>
+
+
+    <!-- END nav -->
+
+
+
+    <section class="ftco-section-3 img" style="background-image: url(../../Content/Index/images/bg_10.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row d-md-flex">
+                <div class="col-md-6 d-flex ftco-animate">
+                    <div class="img img-2 align-self-stretch" style="background-image: url(../../Content/Index/images/bg_11.jpg);"></div>
+                </div>
+                <div class="col-md-6 volunteer pl-md-5 ftco-animate">
+                    <h3 class="mb-3">Sign In</h3>
+                    <form action="#" class="volunter-form">
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.DonorName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.DonorName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group"> </div>
+                        <div class="form-group">
+                            <input type="submit" name="Submit" value="Login" class="btn btn-white py-3 px-5">
+                            <h3 class="mb-5" style="color:mediumslateblue"> @Html.ActionLink("Not Joined Yet?", "Register",new {@class= "mb-5" } ) </h3>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+
+
+
+</body>
+</html>

@@ -68,14 +68,46 @@ namespace Alpha.Controllers
         [HttpPost]
         public ActionResult Register(DonorTB Donor)
         {
-            Donorrep.Insert(Donor);
-            if((Session["DonateID"] != null))
+
+            if ((Session["DonateID"] != null))
             {
                 Donor.DonateID = Convert.ToInt32(Session["DonateID"]);
+                Donorrep.Insert(Donor);
+
+                Session["DonorID"] = Donor.DonorID;
+                return RedirectToAction("DonorDashboard", "Donor", new { Donor.DonorID });
             }
-                return RedirectToAction(nameof(DonationDetails), new { DTB.DonateID });
+            else
+            {
+                Session["DonorID"] = Donor.DonorID;
+                Donorrep.Insert(Donor);
+                return RedirectToAction("Login");
+            }
 
         }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(DonorTB model)
+        {
+            CovidDatacontext DB = new CovidDatacontext();
+            var user = DB.DonorTBs.FirstOrDefault(x => x.DonorName == model.DonorName && x.Password == model.Password);
+            if (user != null)
+            {
+                Session["DonorID"] = user.DonorID;
+                Session["DonorName"] = user.DonorName;
+                return RedirectToAction("DonorDashboard", "Donor", new { user.DonorID });
+            }
+            else 
+            {
+                return RedirectToAction("Login");
+            }
+        }
+
 
     }
 }
