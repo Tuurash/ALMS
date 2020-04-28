@@ -53,7 +53,7 @@ namespace Alpha.Controllers
 
         public ActionResult DonationDetails(int DonateID)
         {
-            if ((Session["DonateID"]!= null))
+            if ((Session["DonateID"] != null))
             {
                 return View(Donationrep.Get(DonateID));
             }
@@ -62,8 +62,8 @@ namespace Alpha.Controllers
 
         public ActionResult Register()
         {
-                return View();
-         
+            return View();
+
         }
         [HttpPost]
         public ActionResult Register(DonorTB Donor)
@@ -92,22 +92,38 @@ namespace Alpha.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(DonorTB model)
+        public ActionResult Login(LoginModel model)
         {
             CovidDatacontext DB = new CovidDatacontext();
-            var user = DB.DonorTBs.FirstOrDefault(x => x.DonorName == model.DonorName && x.Password == model.Password);
-            if (user != null)
+
+            var user = DB.DonorTBs.FirstOrDefault(x => x.DonorName == model.Name && x.Password == model.Password);
+
+            if (user!= null)
             {
                 Session["DonorID"] = user.DonorID;
                 Session["DonorName"] = user.DonorName;
+
                 return RedirectToAction("DonorDashboard", "Donor", new { user.DonorID });
             }
-            else 
+
+            else
             {
-                return RedirectToAction("Login");
+                var admin = DB.AdminTBs.FirstOrDefault(x => x.AdminName == model.Name && x.AdminPAssword == model.Password);
+                if (admin != null)
+                {
+
+                    Session["AdminID"] = admin.AdminID;
+                    Session["AdminName"] = admin.AdminName;
+
+                    return RedirectToAction("AdminDashboard", "Admin", new { admin.AdminID });
+                }
+                else
+                {
+                    return RedirectToAction("Login");
+                }
             }
+
+
         }
-
-
     }
 }

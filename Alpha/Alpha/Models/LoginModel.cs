@@ -9,7 +9,7 @@ namespace Alpha.Models
     public class LoginModel
     {
         [Required(ErrorMessage = "Must type User Email correctly!")]
-        public string DonorName { get; set; }
+        public string Name { get; set; }
 
         [Required(ErrorMessage = "Must Type Password correctly!")]
         [DataType(DataType.Password)]

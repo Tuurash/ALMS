@@ -13,16 +13,16 @@
 <body>
     <div>
         @{
-            ViewBag.Title = "UserDashBoard";
+            ViewBag.Title = "Admin Dashboard";
         }
 
         <fieldset>
             <legend> User DashBoard </legend>
 
-            @if (Session["DonorName"] != null)
+            @if (Session["AdminName"] != null)
             {
                 <text>
-                    Welcome @Session["DonorName"].ToString()
+                    Welcome @Session["AdminName"].ToString()
                 </text>
 
                 <br /><br />
@@ -32,7 +32,7 @@
 
 
             }
-            
+
         </fieldset>
     </div>
     <div>@Html.ActionLink("LogOut", "Logout")</div>

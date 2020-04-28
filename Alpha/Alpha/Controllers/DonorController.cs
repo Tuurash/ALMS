@@ -12,21 +12,18 @@ namespace Alpha.Controllers
     {
         IRepository<DonorTB> Donorrep = new DonorRepo();
         // GET: Donor
-        public ActionResult DonorDashboard1(int DonorID)
+        public ActionResult DonorDashboard(DonorTB donor)
         {
             if ((Session["DonorID"] != null))
             {
-                return View(Donorrep.Get(DonorID));
+                donor.DonorID = Convert.ToInt32(Session["DonorID"]);
+                
+                return View();
             }
             else 
             {
                 return RedirectToAction("Register", "Home");
             }
-        }
-
-        public ActionResult DonorDashboard(int DonorID)
-        {
-            return View();
         }
     }
 

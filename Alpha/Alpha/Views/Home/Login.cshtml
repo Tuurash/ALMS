@@ -1,52 +1,59 @@
-﻿@model Alpha.Models.DonorTB
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>ARS-Advanced Relief-Distribution System</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-</head>
-<body>
+﻿@model Alpha.Models.LoginModel
 
 
-    <!-- END nav -->
+<div class="container">
+    <div class="row">
 
-
-
-    <section class="ftco-section-3 img" style="background-image: url(../../Content/Index/images/bg_10.jpg);">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row d-md-flex">
-                <div class="col-md-6 d-flex ftco-animate">
-                    <div class="img img-2 align-self-stretch" style="background-image: url(../../Content/Index/images/bg_11.jpg);"></div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <h4 class="modal-title" id="myModal-label"> Login </h4>
                 </div>
-                <div class="col-md-6 volunteer pl-md-5 ftco-animate">
-                    <h3 class="mb-3">Sign In</h3>
-                    <form action="#" class="volunter-form">
-                        <div class="form-group">
-                            @Html.EditorFor(model => model.DonorName, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.DonorName, "", new { @class = "text-danger" })
+                <div class="modal-body">
+                    @using (Html.BeginForm(FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+
+                            <hr />
+                            
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Login" class="btn btn-default" />
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group"> </div>
-                        <div class="form-group">
-                            <input type="submit" name="Submit" value="Login" class="btn btn-white py-3 px-5">
-                            <h3 class="mb-5" style="color:mediumslateblue"> @Html.ActionLink("Not Joined Yet?", "Register",new {@class= "mb-5" } ) </h3>
-                        </div>
-                    </form>
+                    }
+                    <div>
+                        @Html.ActionLink("Not a User? Register", "Registration")
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" id="btnCancel">Cancel</button>
                 </div>
             </div>
+
+
         </div>
-    </section>
-    <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
 
 
-
-</body>
-</html>
+    </div>
+</div>
