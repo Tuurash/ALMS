@@ -38,7 +38,7 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="../../Content/Index/index.html" class="nav-link">Home</a></li>
+          <li class="nav-item active"><a href="@Url.Action("Index","Home")" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="../../Content/Index/about.html" class="nav-link">About</a></li>
           <li class="nav-item"><a href="../../Content/Index/donate.html" class="nav-link">Donate</a></li>
           <li class="nav-item"><a href="../../Content/Index/event.html" class="nav-link">Events</a></li>
@@ -71,8 +71,10 @@
                 <div class="text">
                     <span>Served Over</span>
                     <strong class="number" data-number="1432805">0</strong>
-                    <span>Children in 190 countries in the world</span>
-                    <p>@Html.ActionLink("Peek at Those who Need you", "ReliefList")"</p>
+                    <span>People in 190 Areas in Bangladesh</span>
+                    
+                    <p><a href="@Url.Action("ReliefList","Home")" class="btn btn-white px-3 py-2 mt-2">Peek at Those who Need you</a></p>
+
                 </div>
             </div>
           </div>
