@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CovidModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AddressTB">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Street" Type="varchar" MaxLength="50" />
+    <Property Name="Town" Type="varchar" MaxLength="50" />
+    <Property Name="District" Type="varchar" MaxLength="50" />
+    <Property Name="Division" Type="varchar" MaxLength="50" />
+    <Property Name="PostCode" Type="varchar" MaxLength="50" />
+    <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AdminTB">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AdminPAssword" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BetaTB">
+    <Key>
+      <PropertyRef Name="BetaID" />
+    </Key>
+    <Property Name="BetaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Age" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AddressID" Type="int" />
+    <Property Name="BetaPhoneNo" Type="varchar" MaxLength="50" />
+    <Property Name="BetaRelevent" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="DonationTB">
+    <Key>
+      <PropertyRef Name="DonateID" />
+    </Key>
+    <Property Name="DonateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Amount" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Career" Type="varchar" MaxLength="50" />
+    <Property Name="DonateDate" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DonorID" Type="int" />
+  </EntityType>
+  <EntityType Name="DonorTB">
+    <Key>
+      <PropertyRef Name="DonorID" />
+    </Key>
+    <Property Name="DonorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DonorName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Message" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Visiblity" Type="varchar" MaxLength="50" />
+    <Property Name="DonateID" Type="int" />
+    <Property Name="AddressID" Type="int" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FamilyTB">
+    <Key>
+      <PropertyRef Name="FamilyID" />
+    </Key>
+    <Property Name="FamilyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AuthTyp" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AuthNo" Type="varchar" MaxLength="50" />
+    <Property Name="Age" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Relation" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="BetaID" Type="int" />
+  </EntityType>
+  <EntityType Name="RecieverTB">
+    <Key>
+      <PropertyRef Name="RecieverID" />
+    </Key>
+    <Property Name="RecieverID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RecieverName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AuthTyp" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NID" Type="varchar" MaxLength="50" />
+    <Property Name="BCID" Type="varchar" MaxLength="50" />
+    <Property Name="RecieverPhoneNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FamilyID" Type="int" />
+    <Property Name="Age" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FamilyMemberCount" Type="varchar" MaxLength="50" />
+    <Property Name="DonorID" Type="int" />
+    <Property Name="RecieveCount" Type="int" />
+    <Property Name="AddressID" Type="int" />
+    <Property Name="RecieverJob" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReliefTB">
+    <Key>
+      <PropertyRef Name="DonationID" />
+    </Key>
+    <Property Name="DonationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RecieverID" Type="int" />
+    <Property Name="DonorID" Type="int" />
+    <Property Name="DonationDate" Type="varchar" MaxLength="50" />
+    <Property Name="DonationStatus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BetaID" Type="int" />
+  </EntityType>
+  <Association Name="FK_BetaTB_AddressTB">
+    <End Role="AddressTB" Type="Self.AddressTB" Multiplicity="0..1" />
+    <End Role="BetaTB" Type="Self.BetaTB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AddressTB">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="BetaTB">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonorTB_AddressTB">
+    <End Role="AddressTB" Type="Self.AddressTB" Multiplicity="0..1" />
+    <End Role="DonorTB" Type="Self.DonorTB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AddressTB">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="DonorTB">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonorTB_DonationTB">
+    <End Role="DonationTB" Type="Self.DonationTB" Multiplicity="0..1" />
+    <End Role="DonorTB" Type="Self.DonorTB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonationTB">
+        <PropertyRef Name="DonateID" />
+      </Principal>
+      <Dependent Role="DonorTB">
+        <PropertyRef Name="DonateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FamilyTB_BetaTB">
+    <End Role="BetaTB" Type="Self.BetaTB" Multiplicity="0..1" />
+    <End Role="FamilyTB" Type="Self.FamilyTB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BetaTB">
+        <PropertyRef Name="BetaID" />
+      </Principal>
+      <Dependent Role="FamilyTB">
+        <PropertyRef Name="BetaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecieverTB_AddressTB">
+    <End Role="AddressTB" Type="Self.AddressTB" Multiplicity="0..1" />
+    <End Role="RecieverTB" Type="Self.RecieverTB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AddressTB">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="RecieverTB">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecieverTB_FamilyTB">
+    <End Role="FamilyTB" Type="Self.FamilyTB" Multiplicity="0..1" />
+    <End Role="RecieverTB" Type="Self.RecieverTB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FamilyTB">
+        <PropertyRef Name="FamilyID" />
+      </Principal>
+      <Dependent Role="RecieverTB">
+        <PropertyRef Name="FamilyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReliefTB_BetaTB">
+    <End Role="BetaTB" Type="Self.BetaTB" Multiplicity="0..1" />
+    <End Role="ReliefTB" Type="Self.ReliefTB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BetaTB">
+        <PropertyRef Name="BetaID" />
+      </Principal>
+      <Dependent Role="ReliefTB">
+        <PropertyRef Name="BetaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReliefTB_DonorTB">
+    <End Role="DonorTB" Type="Self.DonorTB" Multiplicity="0..1" />
+    <End Role="ReliefTB" Type="Self.ReliefTB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonorTB">
+        <PropertyRef Name="DonorID" />
+      </Principal>
+      <Dependent Role="ReliefTB">
+        <PropertyRef Name="DonorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReliefTB_RecieverTB">
+    <End Role="RecieverTB" Type="Self.RecieverTB" Multiplicity="0..1" />
+    <End Role="ReliefTB" Type="Self.ReliefTB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RecieverTB">
+        <PropertyRef Name="RecieverID" />
+      </Principal>
+      <Dependent Role="ReliefTB">
+        <PropertyRef Name="RecieverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CovidModelStoreContainer">
+    <EntitySet Name="AddressTB" EntityType="Self.AddressTB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminTB" EntityType="Self.AdminTB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BetaTB" EntityType="Self.BetaTB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DonationTB" EntityType="Self.DonationTB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DonorTB" EntityType="Self.DonorTB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FamilyTB" EntityType="Self.FamilyTB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecieverTB" EntityType="Self.RecieverTB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReliefTB" EntityType="Self.ReliefTB" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BetaTB_AddressTB" Association="Self.FK_BetaTB_AddressTB">
+      <End Role="AddressTB" EntitySet="AddressTB" />
+      <End Role="BetaTB" EntitySet="BetaTB" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonorTB_AddressTB" Association="Self.FK_DonorTB_AddressTB">
+      <End Role="AddressTB" EntitySet="AddressTB" />
+      <End Role="DonorTB" EntitySet="DonorTB" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonorTB_DonationTB" Association="Self.FK_DonorTB_DonationTB">
+      <End Role="DonationTB" EntitySet="DonationTB" />
+      <End Role="DonorTB" EntitySet="DonorTB" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FamilyTB_BetaTB" Association="Self.FK_FamilyTB_BetaTB">
+      <End Role="BetaTB" EntitySet="BetaTB" />
+      <End Role="FamilyTB" EntitySet="FamilyTB" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecieverTB_AddressTB" Association="Self.FK_RecieverTB_AddressTB">
+      <End Role="AddressTB" EntitySet="AddressTB" />
+      <End Role="RecieverTB" EntitySet="RecieverTB" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecieverTB_FamilyTB" Association="Self.FK_RecieverTB_FamilyTB">
+      <End Role="FamilyTB" EntitySet="FamilyTB" />
+      <End Role="RecieverTB" EntitySet="RecieverTB" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReliefTB_BetaTB" Association="Self.FK_ReliefTB_BetaTB">
+      <End Role="BetaTB" EntitySet="BetaTB" />
+      <End Role="ReliefTB" EntitySet="ReliefTB" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReliefTB_DonorTB" Association="Self.FK_ReliefTB_DonorTB">
+      <End Role="DonorTB" EntitySet="DonorTB" />
+      <End Role="ReliefTB" EntitySet="ReliefTB" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReliefTB_RecieverTB" Association="Self.FK_ReliefTB_RecieverTB">
+      <End Role="RecieverTB" EntitySet="RecieverTB" />
+      <End Role="ReliefTB" EntitySet="ReliefTB" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

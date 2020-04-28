@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Alpha.Models.ReliefTB>
+
+@{
+    ViewBag.Title = "ReliefList";
+}
+
+<h2>ReliefList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecieverID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BetaID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecieverID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BetaID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
