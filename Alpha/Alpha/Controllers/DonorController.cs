@@ -54,6 +54,26 @@ namespace Alpha.Controllers
             Session["DonorID"] = DTB.DonorID;
             return RedirectToAction("DonorContribute", new { DTB.DonorID });
         }
+        public ActionResult Recipants(int donorid)
+        {
+            CovidDatacontext CDB = new CovidDatacontext();
+            var list = CDB.ReliefTBs.Where(x => x.DonorID == donorid);
+            return View(list);
+        }
+
+        public ActionResult ReliefDetails(int donorid)
+        {
+            CovidDatacontext CDB = new CovidDatacontext();
+            var relief = CDB.ReliefTBs.FirstOrDefault(x => x.DonorID == donorid);
+            return View(relief);
+        }
+
+        public ActionResult RecieverDetails(int recieverid)
+        {
+            IRepository<RecieverTB> rcvrRep = new RecieverRepo();
+
+            return View(rcvrRep.Get(recieverid));
+        }
     }
 
 }

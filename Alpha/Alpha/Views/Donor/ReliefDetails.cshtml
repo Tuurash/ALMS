@@ -1,0 +1,52 @@
+﻿@model Alpha.Models.ReliefTB
+
+@{
+    ViewBag.Title = "ReliefDetails";
+}
+
+<h2>ReliefDetails</h2>
+
+<div>
+    <h4>ReliefTB</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DonationID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonationID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecieverID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecieverID)
+            @Html.ActionLink("Details", "RecieverDetails", new { recieverid = Model.RecieverID })
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonationStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonationStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    
+    @Html.ActionLink("Back to List", "Recipants", new { donorid = Model.DonorID })
+</p>

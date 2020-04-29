@@ -1,0 +1,43 @@
+﻿@model Alpha.Models.RecieverTB
+
+@{
+    ViewBag.Title = "RecieverDetails";
+}
+
+<h2>RecieverDetails</h2>
+
+<div>
+    <h4>RecieverTB</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RecieverID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecieverID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecieverName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecieverName)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecieverJob)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecieverJob)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink("Back ", "Index")
+</p>

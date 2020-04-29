@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Alpha.Models.ReliefTB>
+
+@{
+    ViewBag.Title = "Recipants";
+}
+
+<h2>Recipants</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecieverID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationStatus)
+        </th>
+      
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecieverID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationStatus)
+        </td>
+    
+        <td>
+            
+            @Html.ActionLink("Details", "ReliefDetails", new { donorid=item.DonorID }) |
+
+        </td>
+    </tr>
+}
+
+</table>

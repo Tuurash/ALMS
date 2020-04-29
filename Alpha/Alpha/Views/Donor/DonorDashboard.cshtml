@@ -30,6 +30,7 @@
                 <br /><br />
 
                 <div>@Html.ActionLink("See Contributions", "DonorContribute", new { donorid = Convert.ToInt32(Session["DonorID"]) })</div>
+                <div>@Html.ActionLink("See Donation in Action", "Recipants", new { donorid = Convert.ToInt32(Session["DonorID"]) })</div>
 
             }
 

@@ -181,8 +181,10 @@
     <Compile Include="Repository\IAdminRepo.cs" />
     <Compile Include="Repository\IDonationRepo.cs" />
     <Compile Include="Repository\IDonorRepo.cs" />
+    <Compile Include="Repository\IRecieverRepo.cs" />
     <Compile Include="Repository\IReliefRepo.cs" />
     <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\RecieverRepo.cs" />
     <Compile Include="Repository\ReliefRepo.cs" />
     <Compile Include="Repository\Repository.cs" />
   </ItemGroup>
@@ -440,6 +442,9 @@
     <Content Include="Views\Admin\AdminDashboard.cshtml" />
     <Content Include="Views\Donor\DonorContribute.cshtml" />
     <Content Include="Views\Donor\Donate.cshtml" />
+    <Content Include="Views\Donor\Recipants.cshtml" />
+    <Content Include="Views\Donor\ReliefDetails.cshtml" />
+    <Content Include="Views\Donor\RecieverDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
