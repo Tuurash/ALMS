@@ -6,10 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 
+
 namespace Alpha.Repository
 {
     interface IDonationRepo : IRepository<DonationTB>
     {
         IEnumerable<DonationTB> GetHighestPaidEmployees();
+        List<DonationTB> GetDonorContribute(int donorid);
     }
 }

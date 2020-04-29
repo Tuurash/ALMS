@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Alpha.Models.DonationTB>
+
+@{
+    ViewBag.Title = "DonorContribute";
+}
+
+<h2>DonorContribute</h2>
+
+<p>
+    @Html.ActionLink("Donate", "Donate", new { donorid = Convert.ToInt32(Session["DonorID"]) })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DonateID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Career)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonorID)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonateID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Career)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonorID)
+            </td>
+
+        </tr>
+    }
+
+</table>
+@Html.ActionLink("Back", "DonorDashboard", new { /* id=item.PrimaryKey */ })

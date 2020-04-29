@@ -13,5 +13,6 @@ namespace Alpha.Repository
         void Insert(TEntity entity);
         void Update(TEntity entity);
         void Delete(int id);
+        
     }
 }
