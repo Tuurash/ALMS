@@ -74,6 +74,19 @@ namespace Alpha.Controllers
 
             return View(rcvrRep.Get(recieverid));
         }
+
+        public ActionResult Logout()
+        {
+            if (Session["DonorID"] != null && Session["DonorName"] != null)
+            {
+                Session["DonorID"] = string.Empty;
+                Session["DId"] = string.Empty;
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 
 }

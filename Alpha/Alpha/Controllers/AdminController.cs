@@ -25,6 +25,19 @@ namespace Alpha.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
+
+        public ActionResult Logout()
+        {
+            if (Session["AdminID"] != null && Session["AdminName"] != null)
+            {
+                Session["AdminID"] = string.Empty;
+                Session["AdminName"] = string.Empty;
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 
 }

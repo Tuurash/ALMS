@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Alpha.Models.AddressTB>
+
+@{
+    ViewBag.Title = "AreaCoverage";
+}
+
+<h2>AreaCoverage</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        
+       
+        <th>
+            @Html.DisplayNameFor(model => model.District)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Division)
+        </th>
+        <th>
+            Area
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+     
+        <td>
+            @Html.DisplayFor(modelItem => item.District)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Division)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PoliceStation)
+        </td>
+        <td>
+            
+            @Html.ActionLink("Details", "AreaDetails", new { addressID=item.AddressID }) 
+            
+        </td>
+    </tr>
+}
+
+</table>

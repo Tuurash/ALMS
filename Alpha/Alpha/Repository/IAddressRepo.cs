@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Alpha.Repository
 {
-    interface IRecieverRepo : IRepository<RecieverTB>
+    interface IAddressRepo : IRepository<AddressTB>
     {
-        IEnumerable<RecieverTB> GetHighestPaidEmployees();
-        List<RecieverTB> GetReciverAccordingArea(int addressID);
+        IEnumerable<AddressTB> GetHighestPaidEmployees();
     }
 }

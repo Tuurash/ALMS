@@ -13,6 +13,15 @@ namespace Alpha.Controllers
 
         IRepository<DonationTB> Donationrep = new DonationRepo();
         IRepository<DonorTB> Donorrep = new DonorRepo();
+        IRepository<RecieverTB> RcvrRep = new RecieverRepo();
+        IRecieverRepo IRC;
+
+        public HomeController()
+        {
+            this.RcvrRep = new RecieverRepo();
+            this.IRC = new RecieverRepo();
+        }
+
 
         public ActionResult Index()
         {
@@ -33,11 +42,29 @@ namespace Alpha.Controllers
             return View();
         }
 
-        public ActionResult ReliefList()
+        //public ActionResult ReliefList()
+        //{
+        //    IRepository<RecieverTB> repo = new RecieverRepo();
+        //    return View(repo.GetAll().ToList());
+        //}
+
+
+        public ActionResult AreaCoverage()
         {
-            IRepository<ReliefTB> repo = new ReliefRepo();
-            return View(repo.GetAll().ToList());
+
+            IRepository<AddressTB> adrsRep = new AddressRepo();
+            return View(adrsRep.GetAll());
+
+        
+
         }
+
+        public ActionResult AreaDetails(int addressID)
+        {
+            return View(IRC.GetReciverAccordingArea(addressID));
+        }
+
+
         public ActionResult Donate()
         {
             return View();
@@ -58,6 +85,11 @@ namespace Alpha.Controllers
                 return View(Donationrep.Get(DonateID));
             }
             else { return RedirectToAction("Donate"); }
+        }
+
+        public ActionResult DONORLIST()
+        {
+            return View(Donorrep.GetAll());
         }
 
         public ActionResult Register()

@@ -6,6 +6,9 @@
 
 <h2>Recipants</h2>
 
+<p>
+    @Html.ActionLink("Donate", "Donate", new { donorid = Convert.ToInt32(Session["DonorID"]) })
+</p>
 
 <table class="table">
     <tr>
@@ -24,34 +27,35 @@
         <th>
             @Html.DisplayNameFor(model => model.DonationStatus)
         </th>
-      
+
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.DonationID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RecieverID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DonorID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DonationDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DonationStatus)
-        </td>
-    
-        <td>
-            
-            @Html.ActionLink("Details", "ReliefDetails", new { donorid=item.DonorID }) |
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonationID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecieverID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonorID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonationStatus)
+            </td>
 
-        </td>
-    </tr>
-}
+            <td>
+
+                @Html.ActionLink("Details", "ReliefDetails", new { donorid = item.DonorID }) |
+
+            </td>
+        </tr>
+    }
 
 </table>
