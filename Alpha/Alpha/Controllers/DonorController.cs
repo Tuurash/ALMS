@@ -41,6 +41,8 @@ namespace Alpha.Controllers
 
         public ActionResult Donate()
         {
+            var list = new List<string>() { "bkash", "Rocket", "Nogod", "Payslip", "other" };
+            ViewBag.list = list;
             return View();
         }
         [HttpPost]

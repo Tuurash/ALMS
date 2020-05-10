@@ -99,6 +99,11 @@ namespace Alpha.Controllers
 
         public ActionResult Register()
         {
+            var Dtype = new List<string>() { "Individual","Group","Organization" };
+            ViewBag.list = Dtype;
+
+            var Dvisibility = new List<string>() { "Yes", "No"};
+            ViewBag.list1 = Dvisibility;
             return View();
 
         }
