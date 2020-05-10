@@ -149,6 +149,7 @@
     <Compile Include="Models\DonorTB.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DonorViewmodel.cs" />
     <Compile Include="Models\FamilyTB.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
