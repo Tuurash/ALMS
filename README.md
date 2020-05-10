@@ -14,5 +14,8 @@ Corruption resistant crystalline demonstration
 A practical approach to estimate support counts and survival sufficiency requirements
 Many people wants to provide financial help or food support to these vulnerable people. But due to the lack of a reliable platform they are not able to do it.
 
+# Flowchart
+![](Demand_Uncertainity.png)
+
 #Video Demonstration (user side)
 https://youtu.be/jmmCe-WeZT0
