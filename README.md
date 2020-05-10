@@ -1,5 +1,8 @@
 # ALMS
-Advanced Relief System
+An Advanced Relief Distribution
+ &
+Donation Management System.
+
 
 We are presenting a system that focuses on corruption resistance, support count estimation, and achieving the trust of the financial supporters. 
 
