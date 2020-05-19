@@ -20,8 +20,8 @@ Many people wants to provide financial help or food support to these vulnerable 
 # Flowchart
 ![](Demand_Uncertainity.png)
 
-#Video Demonstration (user side)
+# Video Demonstration (user side)
 https://youtu.be/jmmCe-WeZT0
 
-#Project Link on Callfornation ICT ministry
+# Project Link on Callfornation ICT ministry
 https://callfornation.com/showcase/details/eyJpdiI6ImV4WWcrK3FtTDhwVXh2cDdQMlVBMlE9PSIsInZhbHVlIjoiaVhmUU5FNlo3ODIvSVhXM1hySTJGUT09IiwibWFjIjoiY2NmY2M4MjNjYjYzNWY3MmMyODFlZTcyNzc1ZGQxOWZiY2Y4ODBjYzdlZThiNGQ1NjU4MTNhYzVjNjExM2QyZSJ9
