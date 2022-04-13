@@ -22,7 +22,6 @@ Many people wants to provide financial help or food support to these vulnerable 
 </p>
 
 #### Demonstration
-
 <p align="center">
   [![ALMS demonstration](https://github.com/Tuurash/ALMS/blob/master/dddd.png)](https://youtu.be/jmmCe-WeZT0")
 </p>
