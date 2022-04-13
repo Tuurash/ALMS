@@ -21,8 +21,17 @@ Many people wants to provide financial help or food support to these vulnerable 
   <img align="center" src="https://github.com/Tuurash/ALMS/blob/master/Demand_Uncertainity.png" width="500" height="500" />
 </p>
 
-# Demonstration (user side)
-https://youtu.be/jmmCe-WeZT0
+#### Demonstration
+
+<p align="center">
+    <iframe width="560" height="315"
+src="https://youtu.be/jmmCe-WeZT0" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+   <p>
+
+
 
 # Project Link on CallforNation ICT ministry
 https://callfornation.com/showcase/details/eyJpdiI6ImV4WWcrK3FtTDhwVXh2cDdQMlVBMlE9PSIsInZhbHVlIjoiaVhmUU5FNlo3ODIvSVhXM1hySTJGUT09IiwibWFjIjoiY2NmY2M4MjNjYjYzNWY3MmMyODFlZTcyNzc1ZGQxOWZiY2Y4ODBjYzdlZThiNGQ1NjU4MTNhYzVjNjExM2QyZSJ9
