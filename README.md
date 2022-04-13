@@ -21,13 +21,16 @@ Many people wants to provide financial help or food support to these vulnerable 
   <img align="center" src="https://github.com/Tuurash/ALMS/blob/master/Demand_Uncertainity.png" width="500" height="500" />
 </p>
 
-#### Demonstration
+#### CallforNation Showcase [link](https://callfornation.com/showcase/details/eyJpdiI6ImV4WWcrK3FtTDhwVXh2cDdQMlVBMlE9PSIsInZhbHVlIjoiaVhmUU5FNlo3ODIvSVhXM1hySTJGUT09IiwibWFjIjoiY2NmY2M4MjNjYjYzNWY3MmMyODFlZTcyNzc1ZGQxOWZiY2Y4ODBjYzdlZThiNGQ1NjU4MTNhYzVjNjExM2QyZSJ9)  
 
+#### Demonstration
 <a align="center" href="https://youtu.be/jmmCe-WeZT0">
   <img align="center" src="https://github.com/Tuurash/ALMS/blob/master/dddd.png" width="600" height="400" />
 </a>
 
+#### Issues and Pull Requests
+- not accepting any
 
 
-#### CallforNation Showcase [link](https://callfornation.com/showcase/details/eyJpdiI6ImV4WWcrK3FtTDhwVXh2cDdQMlVBMlE9PSIsInZhbHVlIjoiaVhmUU5FNlo3ODIvSVhXM1hySTJGUT09IiwibWFjIjoiY2NmY2M4MjNjYjYzNWY3MmMyODFlZTcyNzc1ZGQxOWZiY2Y4ODBjYzdlZThiNGQ1NjU4MTNhYzVjNjExM2QyZSJ9)
+
 
