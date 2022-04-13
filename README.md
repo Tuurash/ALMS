@@ -24,7 +24,7 @@ Many people wants to provide financial help or food support to these vulnerable 
 #### Demonstration
 
 <a align="center" href="https://youtu.be/jmmCe-WeZT0">
-  <img align="center" src="https://github.com/Tuurash/ALMS/blob/master/dddd.png" width="500" height="400" />
+  <img align="center" src="https://github.com/Tuurash/ALMS/blob/master/dddd.png" width="600" height="400" />
 </a>
 
 
