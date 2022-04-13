@@ -3,11 +3,11 @@
    Relief Distribution & Donation Management System.
 </h5>
 
-We are presenting a system that focuses on corruption resistance, support count estimation, and achieving the trust of the financial supporters. 
-
+<p align="justify">
+A platform that focuses on corruption resistance, support count estimation, and achieving the trust of the financial supporters. 
 This system will estimate the amount of relief before going there from the NID information and the family member's information provided by the receiver. So the field member will know how much relief is required for a particular area. 
-
 As a donor, someone will be able to send his/her support on the website. The donor will be able to see the donations Directly from the Relief list by going to the site. A central authority will be controlling the full system. 
+</P>
 
 Because of its simplicity and transparency, this system will be corruption free and the donors will have trust in the system.
 
